@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">BlueyMoney</string>
+    <string name="bluey_money">Bluey Money</string>
+    <string name="maneja_tus_finanzas_preciosa">Maneja tus finanzas preciosa</string>
+    <string name="usuario">Usuario</string>
+    <string name="entrar">Entrar</string>
+    <string name="gastos">Gastos</string>
+    <string name="diarios">Diarios</string>
+    <string name="por_mes">Por Mes</string>
+    <string name="por_a_o">Por Año</string>
+    <string name="ahorrado_n_5_950_00">Ahorrado\n$5,950.00</string>
+    <string name="comidas">Comidas</string>
+    <string name="_0_00">$0.00</string>
+    <string name="DAY">07</string>
+    <string name="MONTH_YEAR_DAY">Enero 2024\nDomingo</string>
+    <string name="monto_ej_500_00">Monto (ej. 500.00)</string>
+    <string name="nombre_del_cono_ej_ic_comida">Nombre del ícono (ej. ic_comida)</string>
+    <string name="nombre_del_gasto">Nombre del gasto</string>
+    <string name="icon">icon</string>
+    <string name="seleccionar_cono">Seleccionar ícono</string>
+    <string name="total_recibido">Total Recibido</string>
+    <string name="_10_000_00">$10,000.00</string>
+    <string name="total_de_gastos">Total de Gastos</string>
+</resources>

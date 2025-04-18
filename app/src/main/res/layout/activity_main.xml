@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:background="@color/accent_color"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="100dp"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:textColor="@color/black"
+        android:id="@+id/appTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bluey_money"
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        android:fontFamily="@font/carter"
+        android:textSize="32sp">
+    </TextView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_marginStart="55dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/black"
+        android:layout_height="2dp">
+    </View>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/maneja_tus_finanzas_preciosa"
+        android:layout_gravity="center"
+        android:paddingTop="20dp"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:textSize="17sp"
+        android:paddingBottom="20dp"
+        android:fontFamily="@font/carter">
+    </TextView>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="368dp"
+        android:contentDescription="@string/bluey_money"
+        android:src="@drawable/bluey__svg">
+    </ImageView>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:background="@drawable/background_et"
+        android:id="@+id/email_input"
+        android:layout_margin="25dp"
+        android:layout_width="match_parent"
+        android:hint="@string/usuario"
+        app:endIconMode="clear_text"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
+            android:background="@drawable/background_et"
+            android:inputType="textPersonName"
+            android:id="@+id/email_tv"
+            android:drawableStart="@drawable/ic_bluey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/loginBTN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:text="@string/entrar"
+        android:background="@drawable/background_et"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp">
+    </androidx.appcompat.widget.AppCompatButton>
+
+</LinearLayout>

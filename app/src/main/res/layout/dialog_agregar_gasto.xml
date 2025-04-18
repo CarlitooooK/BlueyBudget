@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="50dp"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <EditText
+        android:background="@drawable/background_et_add"
+        android:id="@+id/etNombreGasto"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:autofillHints=""
+        android:textSize="15sp"
+        android:inputType="text"
+        android:fontFamily="@font/carter"
+        android:layout_marginBottom="10dp"
+        android:hint="@string/nombre_del_gasto" />
+
+    <EditText
+        android:background="@drawable/background_et_add"
+        android:id="@+id/etMontoGasto"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:autofillHints=""
+        android:textSize="15sp"
+        android:fontFamily="@font/carter"
+        android:inputType="numberDecimal"
+        android:layout_marginBottom="20dp"
+        android:hint="@string/monto_ej_500_00" />
+
+    <Button
+        android:id="@+id/btnSeleccionarIcono"
+        android:layout_width="match_parent"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:textColor="@color/black"
+        android:backgroundTint="#8CC0DA"
+        android:layout_height="wrap_content"
+        android:text="@string/seleccionar_cono" />
+
+</LinearLayout>
