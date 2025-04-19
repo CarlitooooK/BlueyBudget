@@ -6,6 +6,9 @@ plugins {
 android {
     namespace = "com.example.blueymoney"
     compileSdk = 35
+    viewBinding{
+        enable = true
+    }
 
     defaultConfig {
         applicationId = "com.example.blueymoney"
