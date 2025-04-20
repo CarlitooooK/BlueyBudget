@@ -22,11 +22,20 @@ class GastosActivity : AppCompatActivity() {
 
     private lateinit var layoutMovimientos: LinearLayout
     private lateinit var layoutGastos:LinearLayout
+    private lateinit var tvTotalGastos:TextView
+    private lateinit var tvTotalIngresos:TextView
+    private lateinit var tvsaldoTotal:TextView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_finances)
+
+        tvTotalGastos = findViewById(R.id.gastoTotal_tv)
+        tvTotalIngresos = findViewById(R.id.ingresoTotal_Tv)
+        tvsaldoTotal = findViewById(R.id.saldoTotal_Tv)
+
 
         window.statusBarColor = getColor(R.color.accent_color)
 
@@ -42,6 +51,56 @@ class GastosActivity : AppCompatActivity() {
 
 
     }
+
+    @SuppressLint("DefaultLocale")
+    private fun actualizarTotales() {
+        val totalGastos = obtenerTotalDesdeLayout(layoutGastos)
+        val totalIngresos = obtenerTotalDesdeLayout(layoutMovimientos)
+
+        val totalGastosFormateado = String.format("$%.2f", totalGastos)
+        val totalIngresosFormateado = String.format("$%.2f", totalIngresos)
+        val saldo = totalIngresos - totalGastos
+        val saldoFormateado = String.format("$%.2f", saldo)
+
+        tvTotalGastos.text = totalGastosFormateado
+        tvTotalIngresos.text = totalIngresosFormateado
+        tvsaldoTotal.text = saldoFormateado
+    }
+
+    private fun obtenerTotalDesdeLayout(layout: LinearLayout): Double {
+        var total = 0.0
+
+        for (i in 0 until layout.childCount) {
+            val vista = layout.getChildAt(i)
+            val tvMonto = vista.findViewById<TextView>(R.id.tvMonto)
+            val montoTexto = tvMonto.text.toString()
+                .replace("$", "")
+                .replace(",", "")
+                .trim()
+            val monto = montoTexto.toDoubleOrNull() ?: 0.0
+            total += monto
+        }
+
+        return total
+    }
+
+
+//    @SuppressLint("DefaultLocale")
+//    private fun actualizarTotalGastos() {
+//        var total = 0.0
+//
+//        for (i in 0 until layoutGastos.childCount) {
+//            val vista = layoutGastos.getChildAt(i)
+//            val tvMonto = vista.findViewById<TextView>(R.id.tvMonto)
+//            val montoTexto = tvMonto.text.toString().replace("$", "").replace(",", "").trim()
+//            val monto = montoTexto.toDoubleOrNull() ?: 0.0
+//            total += monto
+//        }
+//
+//        val totalFormateado = String.format("$%.2f", total)
+//        tvTotalGastos.text = totalFormateado
+//    }
+
 
     private fun mostrarDialogoSeleccionTipo() {
         val opciones = arrayOf("Agregar Gasto", "Agregar Ingreso")
@@ -64,16 +123,19 @@ class GastosActivity : AppCompatActivity() {
     private fun agregarMovimiento(nombre: String, monto: String, icono: Int,gasto:Boolean) {
 
         if (gasto){
-            val item2 = layoutInflater.inflate(R.layout.item_movimiento,layoutGastos)
+            val item2 = layoutInflater.inflate(R.layout.item_movimiento,layoutGastos,false)
             val imgIcono2 = item2.findViewById<ImageView>(R.id.imgIcono)
             val tvNombre2 = item2.findViewById<TextView>(R.id.tvNombre)
             val tvMonto2 = item2.findViewById<TextView>(R.id.tvMonto)
+
+
 
             imgIcono2.setImageResource(icono)
             tvNombre2.text = nombre
             tvMonto2.text = monto
 
-
+            layoutGastos.addView(item2)
+            actualizarTotales()
 
         }else{
             val item = layoutInflater.inflate(R.layout.item_movimiento, layoutMovimientos, false)
@@ -88,7 +150,9 @@ class GastosActivity : AppCompatActivity() {
             tvMonto.text = monto
 
             layoutMovimientos.addView(item)
+            actualizarTotales()
         }
+
 
     }
 
@@ -101,6 +165,7 @@ class GastosActivity : AppCompatActivity() {
             val etMonto = dialogView.findViewById<EditText>(R.id.etMontoGasto)
             val btnIcono = dialogView.findViewById<Button>(R.id.btnSeleccionarIcono)
             var iconoSeleccionado = R.drawable.ic_agregar // Uno por defecto
+
 
             btnIcono.setOnClickListener {
                 mostrarSelectorIcono { iconoId ->
@@ -139,7 +204,7 @@ class GastosActivity : AppCompatActivity() {
             }
 
             AlertDialog.Builder(this)
-                .setTitle("Nuevo Gasto")
+                .setTitle("Nuevo Ingreso")
                 .setView(dialogView)
                 .setPositiveButton("Aceptar") { _, _ ->
                     val nombre = etNombre.text.toString()
@@ -155,12 +220,6 @@ class GastosActivity : AppCompatActivity() {
                 .show()
 
         }
-
-
-
-
-
-
     }
 
     private fun mostrarSelectorIcono(onIconoSeleccionado: (Int) -> Unit) {
