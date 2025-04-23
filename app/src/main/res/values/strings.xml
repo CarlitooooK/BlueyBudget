@@ -23,4 +23,16 @@
     <string name="total_de_gastos">Total de Gastos</string>
     <string name="nombre_del_ingreso">Nombre del Ingreso</string>
     <string name="saldo_total">Saldo Total</string>
+    <string name="gastos_e_ingresos">Gastos e Ingresos</string>
+    <string name="balance">Balance</string>
+    <string name="grafica">Grafica</string>
+    <string name="listas">Listas</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="selecciona_la_fecha">Selecciona la fecha</string>
+    <string name="gr_fica">Gráfica</string>
+    <string name="ingresos">Ingresos</string>
+    <string name="gastos_title">Gastos</string>
+    <string name="_4_870_00">$4,870.00</string>
+    <string name="sueldo_total">Sueldo Total</string>
 </resources>

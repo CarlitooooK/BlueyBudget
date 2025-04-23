@@ -9,6 +9,7 @@
     <EditText
         android:background="@drawable/background_et_add"
         android:id="@+id/etNombreIngreso"
+        android:padding="8dp"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:autofillHints=""
@@ -24,11 +25,29 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:autofillHints=""
+        android:padding="8dp"
         android:textSize="15sp"
         android:fontFamily="@font/carter"
         android:inputType="numberDecimal"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
         android:hint="@string/monto_ej_500_00" />
+
+    <EditText
+        android:autofillHints=""
+        android:textSize="15sp"
+        android:fontFamily="@font/carter"
+        android:background="@drawable/background_et_add"
+        android:id="@+id/etFecha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/selecciona_la_fecha"
+        android:focusable="false"
+        android:inputType="none"
+        android:layout_marginBottom="20dp"
+        android:drawableEnd="@drawable/ic_calendar"
+        android:padding="8dp">
+    </EditText>
+
 
     <Button
         android:id="@+id/btnSeleccionarIcono"
