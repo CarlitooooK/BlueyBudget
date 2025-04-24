@@ -1,14 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.ListsFragment">
+    android:layout_margin="20dp"
+    android:orientation="vertical"
+    android:padding="16dp">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <EditText
+        android:fontFamily="@font/carter"
+        android:background="@drawable/background_et_add"
+        android:id="@+id/editTextItem"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="50dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:autofillHints=""
+        android:hint="@string/agregar_un_nuevo_elemento"
+        android:inputType="text" />
 
-</FrameLayout>
+    <EditText
+        android:fontFamily="@font/carter"
+        android:autofillHints=" "
+        android:background="@drawable/background_et_add"
+        android:id="@+id/editTextPrice"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="20dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="0dp"
+        android:hint="@string/precio_del_producto"
+        android:inputType="numberDecimal" />
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:backgroundTint="@color/btn_color"
+            android:layout_marginEnd="10dp"
+            android:textColor="@color/black"
+            android:id="@+id/buttonAdd"
+            android:fontFamily="@font/inter"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="@string/agregar"
+            tools:ignore="ButtonStyle" />
+
+        <Button
+            android:textColor="@color/black"
+            android:fontFamily="@font/inter"
+            android:textStyle="bold"
+            android:backgroundTint="@color/btn_color"
+            android:id="@+id/buttonCargar"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            tools:ignore="ButtonStyle"
+            android:layout_height="wrap_content"
+            android:text="@string/cargar_datos" />
+
+    </LinearLayout>
+    
+
+
+    <TextView
+        android:id="@+id/textViewTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/carter"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:text="@string/total_0_00"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:id="@+id/recyclerViewItems"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+</LinearLayout>

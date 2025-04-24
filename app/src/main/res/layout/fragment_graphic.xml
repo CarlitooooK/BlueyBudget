@@ -17,6 +17,7 @@
         android:layout_height="wrap_content">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/ingresoCardView"
             android:layout_width="170dp"
             android:layout_gravity="center"
             android:layout_height="40dp"

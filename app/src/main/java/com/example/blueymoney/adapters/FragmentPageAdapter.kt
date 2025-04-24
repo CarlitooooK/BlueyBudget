@@ -1,4 +1,4 @@
-package com.example.blueymoney
+package com.example.blueymoney.adapters
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

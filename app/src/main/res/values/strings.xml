@@ -19,12 +19,12 @@
     <string name="icon">icon</string>
     <string name="seleccionar_cono">Seleccionar ícono</string>
     <string name="total_recibido">Total de Ingresos</string>
-    <string name="_10_000_00">$10,000.00</string>
+    <string name="_10_000_00">$4,000.00</string>
     <string name="total_de_gastos">Total de Gastos</string>
     <string name="nombre_del_ingreso">Nombre del Ingreso</string>
     <string name="saldo_total">Saldo Total</string>
     <string name="gastos_e_ingresos">Gastos e Ingresos</string>
-    <string name="balance">Balance</string>
+    <string name="balance">Balance: </string>
     <string name="grafica">Grafica</string>
     <string name="listas">Listas</string>
     <!-- TODO: Remove or change this placeholder text -->
@@ -35,4 +35,11 @@
     <string name="gastos_title">Gastos</string>
     <string name="_4_870_00">$4,870.00</string>
     <string name="sueldo_total">Sueldo Total</string>
+    <string name="agregar_un_nuevo_elemento">Agregar un nuevo elemento</string>
+    <string name="agregar">Agregar</string>
+    <string name="precio_del_producto">Precio del producto</string>
+    <string name="total_0_00">Total: $0.00</string>
+    <string name="cargar_datos">Cargar Datos</string>
+    <string name="finanzas">Finanzas</string>
+    <string name="movimientos_generales">Movimientos Generales</string>
 </resources>

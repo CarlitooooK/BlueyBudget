@@ -1,23 +1,11 @@
 package com.example.blueymoney
 
-import android.annotation.SuppressLint
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.GridView
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.TextView
-import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import androidx.appcompat.app.AlertDialog
 import androidx.viewpager2.widget.ViewPager2
 import androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
+import com.example.blueymoney.adapters.FragmentPageAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
 
@@ -37,7 +25,7 @@ class GastosActivity : AppCompatActivity() {
         tabLayout = findViewById(R.id.tabLayout)
         viewPager2 = findViewById(R.id.viewPager2)
 
-        adapter =FragmentPageAdapter(supportFragmentManager, lifecycle)
+        adapter = FragmentPageAdapter(supportFragmentManager, lifecycle)
 
         viewPager2.adapter = adapter
 

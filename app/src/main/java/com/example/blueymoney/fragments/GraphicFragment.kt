@@ -28,14 +28,9 @@ class GraphicFragment : Fragment() {
     ): View? {
 
         val view = inflater.inflate(R.layout.fragment_graphic, container, false)
-
         pieChart = view.findViewById(R.id.chart)
 
-
         val list:ArrayList<PieEntry> =ArrayList()
-
-
-
 
         list.add(PieEntry(100f,"Salida"))
         list.add(PieEntry(1250f,"Renta"))

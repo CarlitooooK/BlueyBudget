@@ -6,4 +6,6 @@
     <color name="et_background">#ADC2B4</color>
     <color name="total_bars">#D7D7D7</color>
     <color name="blue_text">#1B4F6B</color>
+    <color name="btn_color">#8CC0DA</color>
+    <color name="title_background">#8EC2DD</color>
 </resources>

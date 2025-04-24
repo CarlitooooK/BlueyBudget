@@ -14,10 +14,14 @@ import androidx.fragment.app.Fragment
 import com.example.blueymoney.R
 import com.example.blueymoney.IconAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import java.io.Serializable
 import java.util.Calendar
 
 //Varaible General para la gráfica
 val values:ArrayList<Float> = ArrayList()
+
+
+
 
 class BalanceFragment : Fragment() {
 
@@ -41,7 +45,8 @@ class BalanceFragment : Fragment() {
         tvSaldo = view.findViewById(R.id.saldoTotal_Tv)
         fabAgregar = view.findViewById(R.id.fabAgregar)
 
-        agregarMovimiento("Renta", "10000.00", R.drawable.ic_renta, false)
+        agregarMovimiento("Mesada", "800.00", R.drawable.ic_renta, false)
+        agregarMovimiento("Renta", "2000.00", R.drawable.ic_renta, false)
 
         fabAgregar.setOnClickListener {
             mostrarDialogoSeleccionTipo()
@@ -66,17 +71,12 @@ class BalanceFragment : Fragment() {
     }
 
     @SuppressLint("SetTextI18n", "InflateParams")
-    private fun agregarMovimiento(nombre: String, monto: String, icono: Int, gasto: Boolean) {
+     fun agregarMovimiento(nombre: String, monto: String, icono: Int, gasto: Boolean) {
         val item = layoutInflater.inflate(R.layout.item_movimiento, null)
         val imgIcono = item.findViewById<ImageView>(R.id.imgIcono)
         val tvNombre = item.findViewById<TextView>(R.id.tvNombre)
         val tvMonto = item.findViewById<TextView>(R.id.tvMonto)
 
-
-//        val tvFecha = TextView(context)
-//        tvFecha.text = fecha
-//        tvFecha.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
-//        (tvNombre.parent as LinearLayout).addView(tvFecha)
 
 
         imgIcono.setImageResource(icono)
@@ -156,21 +156,6 @@ class BalanceFragment : Fragment() {
             .setPositiveButton("Aceptar") { _, _ ->
                 val nombre = etNombre.text.toString()
                 val monto = etMonto.text.toString()
-//                val etFecha = dialogView.findViewById<EditText>(R.id.etFecha)
-//                val calendar = Calendar.getInstance()
-//
-//                etFecha.setOnClickListener {
-//                    DatePickerDialog(
-//                        requireContext(), // o "this" si estás en una Activity
-//                        { _, year, month, dayOfMonth ->
-//                            val fechaSeleccionada = String.format("%02d/%02d/%04d", dayOfMonth, month + 1, year)
-//                            etFecha.setText(fechaSeleccionada)
-//                        },
-//                        calendar.get(Calendar.YEAR),
-//                        calendar.get(Calendar.MONTH),
-//                        calendar.get(Calendar.DAY_OF_MONTH)
-//                    ).show()
-//                }
 
                 if (nombre.isNotEmpty() && monto.isNotEmpty()) {
                     agregarMovimiento(nombre, monto, iconoSeleccionado, esGasto)
@@ -209,4 +194,8 @@ class BalanceFragment : Fragment() {
 
         dialog.show()
     }
+
+
+
+
 }
