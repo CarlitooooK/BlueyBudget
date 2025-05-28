@@ -1,44 +1,48 @@
 package com.example.blueymoney.adapters
 
+
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.blueymoney.R
 import com.example.blueymoney.fragments.ShoppingItem
 
 class ShoppingListAdapter(
-    private val items: MutableList<ShoppingItem>,
-    private val onItemClick: (Int) -> Unit
+    private val items: List<ShoppingItem>,
+    private val onItemLongClick: (Int) -> Unit
 ) : RecyclerView.Adapter<ShoppingListAdapter.ViewHolder>() {
 
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val textViewName: TextView = itemView.findViewById(android.R.id.text1)
-        private val textViewPrice: TextView = itemView.findViewById(android.R.id.text2)
+    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val icono: ImageView = view.findViewById(R.id.imgIcono)
+        val nombre: TextView = view.findViewById(R.id.tvNombre)
+        val monto: TextView = view.findViewById(R.id.tvMonto)
 
         init {
-            itemView.setOnClickListener {
-                onItemClick(adapterPosition)
+            view.setOnLongClickListener {
+                onItemLongClick(adapterPosition)
+                true
             }
-        }
-
-        @SuppressLint("DefaultLocale")
-        fun bind(item: ShoppingItem) {
-            textViewName.text = item.name
-            textViewPrice.text = String.format("$%.2f", item.price)
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(android.R.layout.simple_list_item_2, parent, false)
-        return ViewHolder(view)
+        val vista = LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_producto, parent, false)
+        return ViewHolder(vista)
     }
 
+    @SuppressLint("DefaultLocale")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(items[position])
+        val item = items[position]
+        holder.icono.setImageResource(R.drawable.ic_palomita) // Usa cualquier ícono que desees
+        holder.nombre.text = item.name
+        holder.monto.text = String.format("$%.2f", item.price)
     }
 
     override fun getItemCount(): Int = items.size
 }
+

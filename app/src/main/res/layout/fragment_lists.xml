@@ -3,9 +3,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="20dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/back_color"
     android:orientation="vertical"
     android:padding="16dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_gravity="center"
+        android:id="@+id/titleMovements"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:cardCornerRadius="12dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lista_del_super"
+            android:fontFamily="@font/carter"
+            android:textSize="26sp"
+            android:layout_gravity="center"
+            android:gravity="center">
+        </TextView>
+
+    </androidx.cardview.widget.CardView>
+
+
+
 
     <EditText
         android:fontFamily="@font/carter"
@@ -15,8 +41,9 @@
         android:layout_height="50dp"
         android:paddingStart="10dp"
         android:paddingEnd="0dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="20dp"
         android:autofillHints=""
         android:hint="@string/agregar_un_nuevo_elemento"
         android:inputType="text" />
@@ -28,7 +55,10 @@
         android:id="@+id/editTextPrice"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_margin="20dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:paddingStart="10dp"
         android:paddingEnd="0dp"
         android:hint="@string/precio_del_producto"
@@ -41,32 +71,17 @@
 
         <Button
             android:backgroundTint="@color/btn_color"
-            android:layout_marginEnd="10dp"
             android:textColor="@color/black"
             android:id="@+id/buttonAdd"
             android:fontFamily="@font/inter"
             android:layout_width="wrap_content"
             android:layout_gravity="center"
-            android:layout_height="wrap_content"
+            android:layout_height="56dp"
             android:textStyle="bold"
             android:text="@string/agregar"
             tools:ignore="ButtonStyle" />
 
-        <Button
-            android:textColor="@color/black"
-            android:fontFamily="@font/inter"
-            android:textStyle="bold"
-            android:backgroundTint="@color/btn_color"
-            android:id="@+id/buttonCargar"
-            android:layout_width="wrap_content"
-            android:layout_gravity="center"
-            tools:ignore="ButtonStyle"
-            android:layout_height="wrap_content"
-            android:text="@string/cargar_datos" />
-
     </LinearLayout>
-    
-
 
     <TextView
         android:id="@+id/textViewTotal"
@@ -76,7 +91,7 @@
         android:layout_gravity="center"
         android:layout_marginBottom="10dp"
         android:text="@string/total_0_00"
-        android:textSize="18sp"
+        android:textSize="22sp"
         android:layout_marginTop="16dp"/>
 
 

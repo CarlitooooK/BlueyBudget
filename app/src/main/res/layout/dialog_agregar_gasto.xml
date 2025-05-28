@@ -2,12 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+
     android:layout_margin="50dp"
     android:orientation="vertical"
     android:padding="20dp">
 
     <EditText
         android:background="@drawable/background_et_add"
+        android:backgroundTint="@color/back_color"
         android:padding="8dp"
         android:id="@+id/etNombreGasto"
         android:layout_width="match_parent"
@@ -20,6 +22,7 @@
         android:hint="@string/nombre_del_gasto" />
 
     <EditText
+        android:backgroundTint="@color/back_color"
         android:background="@drawable/background_et_add"
         android:id="@+id/etMontoGasto"
         android:layout_width="match_parent"
@@ -33,6 +36,7 @@
         android:hint="@string/monto_ej_500_00" />
 
     <EditText
+        android:backgroundTint="@color/back_color"
         android:autofillHints=""
         android:textSize="15sp"
         android:fontFamily="@font/carter"

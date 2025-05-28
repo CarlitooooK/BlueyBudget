@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:backgroundTint="@color/accent_color"
+    android:paddingTop="60dp"
     android:layout_height="match_parent"
     android:background="@color/white">
 
     <!-- HEADER AZUL -->
     <LinearLayout
+        android:layout_marginBottom="10dp"
         android:id="@+id/header"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="80dp"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:padding="16dp"
         android:background="@color/accent_color">
 
         <TextView
@@ -20,8 +22,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/finanzas"
-            android:layout_marginStart="20dp"
-            android:textSize="30sp"
+            android:layout_marginStart="30dp"
+            android:textSize="28sp"
             android:textStyle="bold"
             android:fontFamily="@font/inter"
             android:layout_marginEnd="12dp" />
@@ -40,21 +42,12 @@
 
         <ImageButton
             android:contentDescription="@null"
-            android:id="@+id/btnBuscar"
-            android:layout_marginEnd="20dp"
+            android:id="@+id/btnUploadData"
+            android:layout_marginEnd="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
-            android:src="@drawable/ic_search" />
-
-        <ImageButton
-            android:contentDescription="@null"
-            android:id="@+id/btnMenu"
-            android:layout_marginEnd="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:src="@drawable/ic_menu" />
+            android:src="@drawable/ic_cloud" />
     </LinearLayout>
 
     <LinearLayout
@@ -65,36 +58,31 @@
         android:layout_height="wrap_content">
 
 
-        <ImageView
-            android:layout_width="35dp"
-            android:src="@drawable/ic_editar"
-            android:contentDescription="@null"
-            android:layout_marginStart="30dp"
-            android:background="@color/accent_color"
-            android:layout_height="48dp">
-
-        </ImageView>
-
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:tabIndicatorAnimationMode="elastic"
+            app:tabIndicatorAnimationDuration="@integer/material_motion_duration_long_2"
+            app:tabIndicatorColor="@color/black"
+            app:tabSelectedTextColor="@color/black"
+            app:tabSelectedTextAppearance="@color/black"
             android:background="@color/accent_color">
 
             <com.google.android.material.tabs.TabItem
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/balance">
+                android:text="@string/gestor">
             </com.google.android.material.tabs.TabItem>
 
             <com.google.android.material.tabs.TabItem
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/grafica">
             </com.google.android.material.tabs.TabItem>
 
             <com.google.android.material.tabs.TabItem
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/listas">
             </com.google.android.material.tabs.TabItem>

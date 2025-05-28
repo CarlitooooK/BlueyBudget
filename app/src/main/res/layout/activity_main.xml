@@ -6,7 +6,7 @@
     android:background="@color/accent_color"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="100dp"
+    android:paddingTop="110dp"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -41,32 +41,48 @@
         android:textAlignment="center"
         android:textSize="17sp"
         android:paddingBottom="20dp"
-        android:fontFamily="@font/carter">
+        android:fontFamily="@font/infra_bold">
     </TextView>
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="368dp"
+        android:layout_height="300dp"
         android:contentDescription="@string/bluey_money"
         android:src="@drawable/bluey__svg">
     </ImageView>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/ingresa_tu_usuario"
+        android:layout_marginTop="40dp"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/inter">
+    </TextView>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:background="@drawable/background_et"
-        android:id="@+id/email_input"
-        android:layout_margin="25dp"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="20dp"
         android:hint="@string/usuario"
-        app:endIconMode="clear_text"
-        android:layout_height="wrap_content">
+        android:layout_marginTop="10dp"
+        android:background="@drawable/background_et"
+        app:passwordToggleEnabled="true">
         <com.google.android.material.textfield.TextInputEditText
-            android:background="@drawable/background_et"
-            android:inputType="textPersonName"
             android:id="@+id/email_tv"
-            android:drawableStart="@drawable/ic_bluey"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="60dp"
+            android:fontFamily="@font/carter"
+            android:background="@drawable/background_et"
+            android:inputType="textPassword">
         </com.google.android.material.textfield.TextInputEditText>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -74,11 +90,27 @@
         android:id="@+id/loginBTN"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="@color/blue_text"
         android:text="@string/entrar"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:textColor="@color/white"
         android:background="@drawable/background_et"
-        android:layout_marginStart="60dp"
-        android:layout_marginEnd="60dp">
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="70dp">
     </androidx.appcompat.widget.AppCompatButton>
+
+    <TextView
+        android:id="@+id/pista"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/pista_de_contrase_a_jim"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        android:fontFamily="@font/inter">
+    </TextView>
 
 </LinearLayout>

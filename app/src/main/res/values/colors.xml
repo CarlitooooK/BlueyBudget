@@ -8,4 +8,6 @@
     <color name="blue_text">#1B4F6B</color>
     <color name="btn_color">#8CC0DA</color>
     <color name="title_background">#8EC2DD</color>
+    <color name="back_color">#E5E7E9</color>
+    <color name="grey_back">#C7C5C5</color>
 </resources>
